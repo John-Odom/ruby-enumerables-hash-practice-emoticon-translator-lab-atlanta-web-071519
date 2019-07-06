@@ -22,6 +22,7 @@ def get_japanese_emoticon(yaml_file, emoticons)
       end
     end
   end
+  japanese_emoticons ||= "Sorry, that emoticon was not found"
 end
 
 def get_english_meaning
