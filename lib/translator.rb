@@ -15,8 +15,13 @@ def load_library(yaml_file)
 end
 
 def get_japanese_emoticon(yaml_file, emoticons)
-  load_library(yaml_file)
-  
+  load_library(yaml_file).map do |get_definition, hashes|
+    hashes.map do |american_emoticons, japanese_emoticons|
+      if emoticons == american_emoticons
+        return japanese_emoticons
+      end
+    end
+  end
 end
 
 def get_english_meaning
