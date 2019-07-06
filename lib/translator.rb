@@ -26,5 +26,12 @@ def get_japanese_emoticon(yaml_file, emoticons)
 end
 
 def get_english_meaning(yaml_file, emoticons)
-  load_library(yaml_file)
+  load_library(yaml_file).map do |get_definition, hashes|
+    hashes.map do |japanese_emoticons, english_meaning|
+      if emoticons == japanese_emoticons
+        return english_meaning
+      end
+    end
+  end
+  english_meaning ||= "Sorry, that emoticon was not found"
 end
