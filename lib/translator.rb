@@ -20,7 +20,6 @@ def get_japanese_emoticon(yaml_file, emoticons)
       if emoticons == american_emoticons
         return japanese_emoticons
       end
-      japanese_emoticons||= ""
     end
   end
 end
